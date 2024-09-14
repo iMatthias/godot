@@ -3485,10 +3485,10 @@ DisplayServerMacOS::DisplayServerMacOS(const String &p_rendering_driver, WindowM
 
 	CGEventSourceSetLocalEventsSuppressionInterval(event_source, 0.0);
 
-	int screen_count = get_screen_count();
-	for (int i = 0; i < screen_count; i++) {
-		display_max_scale = fmax(display_max_scale, screen_get_scale(i));
-	}
+	// int screen_count = get_screen_count();
+	// for (int i = 0; i < screen_count; i++) {
+	// 	display_max_scale = fmax(display_max_scale, screen_get_scale(i));
+	// }
 
 	// Register to be notified on keyboard layout changes.
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDistributedCenter(),
