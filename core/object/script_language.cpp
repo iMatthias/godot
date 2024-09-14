@@ -150,6 +150,8 @@ void Script::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("is_abstract"), &Script::is_abstract);
 
 	ADD_PROPERTY(PropertyInfo(Variant::STRING, "source_code", PROPERTY_HINT_NONE, "", PROPERTY_USAGE_NONE), "set_source_code", "get_source_code");
+
+	ADD_SIGNAL(MethodInfo(SNAME("script_reloaded")));
 }
 
 void ScriptServer::set_scripting_enabled(bool p_enabled) {

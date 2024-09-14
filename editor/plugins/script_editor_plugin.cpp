@@ -1039,6 +1039,8 @@ void ScriptEditor::trigger_live_script_reload() {
 void ScriptEditor::_live_auto_reload_running_scripts() {
 	pending_auto_reload = false;
 	EditorDebuggerNode::get_singleton()->reload_scripts();
+
+	emit_signal(SNAME("script_reloaded"));
 }
 
 bool ScriptEditor::_test_script_times_on_disk(Ref<Resource> p_for_script) {
@@ -3820,6 +3822,7 @@ void ScriptEditor::_bind_methods() {
 
 	ADD_SIGNAL(MethodInfo("editor_script_changed", PropertyInfo(Variant::OBJECT, "script", PROPERTY_HINT_RESOURCE_TYPE, "Script")));
 	ADD_SIGNAL(MethodInfo("script_close", PropertyInfo(Variant::OBJECT, "script", PROPERTY_HINT_RESOURCE_TYPE, "Script")));
+	ADD_SIGNAL(MethodInfo(SNAME("script_reloaded")));
 }
 
 ScriptEditor::ScriptEditor(WindowWrapper *p_wrapper) {
