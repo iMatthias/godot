@@ -883,6 +883,9 @@ Error GDScript::reload(bool p_keep_state) {
 #endif
 
 	reloading = false;
+
+	emit_signal(SNAME("script_reloaded"));
+
 	return OK;
 }
 
