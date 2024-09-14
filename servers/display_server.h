@@ -300,10 +300,10 @@ public:
 	virtual float screen_get_scale(int p_screen = SCREEN_OF_MAIN_WINDOW) const;
 	virtual float screen_get_max_scale() const {
 		float scale = 1.f;
-		int screen_count = get_screen_count();
-		for (int i = 0; i < screen_count; i++) {
-			scale = fmax(scale, screen_get_scale(i));
-		}
+		// int screen_count = get_screen_count();
+		// for (int i = 0; i < screen_count; i++) {
+		// 	scale = fmax(scale, screen_get_scale(i));
+		// }
 		return scale;
 	}
 	virtual float screen_get_refresh_rate(int p_screen = SCREEN_OF_MAIN_WINDOW) const = 0;
